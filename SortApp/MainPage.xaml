@@ -14,12 +14,14 @@
 			<RowDefinition Height="Auto" />
 		</Grid.RowDefinitions>
 
-		<ListView IsItemClickEnabled="False"
+		<ListView Margin="0"
+		          IsItemClickEnabled="False"
 		          ItemsSource="{x:Bind Items}"
+		          Padding="0"
 		          SelectionMode="None">
 			<ListView.ItemsPanel>
 				<ItemsPanelTemplate>
-					<StackPanel Orientation="Horizontal" />
+					<StackPanel VerticalAlignment="Center" Orientation="Horizontal" />
 				</ItemsPanelTemplate>
 			</ListView.ItemsPanel>
 			<ListView.ItemTemplate>
@@ -27,7 +29,7 @@
 					<Border Height="500">
 						<Rectangle Width="4"
 						           Height="{x:Bind}"
-						           Margin="0,0,2,0"
+						           Margin="1,0,1,0"
 						           VerticalAlignment="Bottom"
 						           Fill="SkyBlue" />
 					</Border>
@@ -45,27 +47,45 @@
 					<Setter Property="Margin" Value="0" />
 				</Style>
 			</ListView.ItemContainerStyle>
+			<ListView.ItemContainerTransitions>
+				<TransitionCollection />
+			</ListView.ItemContainerTransitions>
 		</ListView>
 
-		<StackPanel x:Name="panel"
-		            Grid.Row="1"
+		<StackPanel Grid.Row="1"
 		            Margin="10"
 		            Orientation="Horizontal">
-			<Button x:Name="Init"
-			        Width="80"
+			<Button Width="60"
 			        Margin="0,0,5,0"
-			        Click="Init_Click"
-			        Content="Init" />
-			<Button x:Name="Sort"
-			        Width="80"
+			        Click="Reset_Click"
+			        Content="Reset" />
+			<Button Width="60"
 			        Margin="0,0,5,0"
-			        Click="Sort_Click"
-			        Content="Sort" />
-			<Button x:Name="Sort2"
-			        Width="80"
+			        Click="Sort1_Click"
+			        Content="Sort1" />
+			<Button Width="60"
 			        Margin="0,0,5,0"
 			        Click="Sort2_Click"
 			        Content="Sort2" />
+			<Button Width="60"
+			        Margin="0,0,5,0"
+			        Click="Sort3_Click"
+			        Content="Sort3" />
+			<Button Width="60"
+			        Margin="0,0,5,0"
+			        Click="Sort4_Click"
+			        Content="Sort4" />
+			<Button Width="60"
+			        Margin="0,0,5,0"
+			        Click="Sort5_Click"
+			        Content="Sort5" />
 		</StackPanel>
+
+		<Button Grid.Row="1"
+		        Width="60"
+		        Margin="10"
+		        HorizontalAlignment="Right"
+		        Click="Stop_Click"
+		        Content="Stop" />
 	</Grid>
 </Page>
